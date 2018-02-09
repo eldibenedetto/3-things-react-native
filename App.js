@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import TaskEditField from './components/TaskEditField'
+import TaskEdit from './screens/TaskEdit'
 
 export default class App extends React.Component {
 
@@ -39,16 +39,11 @@ export default class App extends React.Component {
   render() {
     let { firstInt, secondInt, thirdInt } = this.state
     let currentColor = `rgb(${firstInt}, ${secondInt}, ${thirdInt})`
-    console.log(currentColor);
 
     return (
       <View style={[styles.container, { backgroundColor: currentColor}]}>
-        <View style={styles.area}>
-          <Text style={styles.text}>My frist mobile app!</Text>
-          <TaskEditField styles={styles.textInput}/>
-          <TaskEditField styles={styles.textInput}/>
-          <TaskEditField styles={styles.textInput}/>
-        </View>
+        <Text style={styles.text}>My frist mobile app!</Text>
+        <TaskEdit />
       </View>
     );
   }
@@ -58,15 +53,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center'
-  },
-  area: {
-    alignItems: 'center',
-    justifyContent: 'space-around',
-    backgroundColor: 'white',
-    borderWidth: 0.5,
-    borderColor: 'black',
-    paddingHorizontal: 10
+    justifyContent: 'space-around'
   },
   text: {
     color: 'black',

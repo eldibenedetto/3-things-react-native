@@ -4,7 +4,7 @@ import { View, StyleSheet, TextInput } from 'react-native'
 class TaskEditField extends React.Component {
 
   state = {
-    inputValue: "What are you going to accomplish tomorrow?"
+    inputValue: ""
   }
 
   handleTextChange = inputValue => {
@@ -14,10 +14,15 @@ class TaskEditField extends React.Component {
   render () {
     return(
       <View>
-        <TextInput
-          value={this.state.inputValue}
-          onChange={this.handleTextChange}
-          style={styles.input}/>
+        <View style={styles.input}>
+          <TextInput
+            style={styles.text}
+            placeholder="What are you going to accomplish tomorrow?"
+            placeholderTextColor="white"
+            value={this.state.inputValue}
+            onChange={this.handleTextChange}
+            returnKeyType='done' />
+        </View>
       </View>
     )
   }
@@ -28,10 +33,13 @@ const styles = StyleSheet.create({
     flex: 1
   },
   input: {
-    width: 200,
+    width: 350,
     padding: 10,
-    borderWidth: 1,
+    borderBottomWidth: 1,
     borderColor: 'black'
+  },
+  text: {
+    fontSize: 16
   }
 })
 
