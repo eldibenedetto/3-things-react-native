@@ -4,9 +4,9 @@ import { View, Text, View, ScrollView, StyleSheet } from 'react-native'
 class Profile extends React.Component {
   render () {
     return (
-      <ScrollView style={styles.container}>
+      <View>
 
-      </ScrollView>
+      </View>
     )
   }
 }
