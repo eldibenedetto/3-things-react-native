@@ -3,12 +3,8 @@ import { View, StyleSheet, TextInput } from 'react-native'
 
 class TaskEditField extends React.Component {
 
-  state = {
-    inputValue: ""
-  }
-
-  handleTextChange = inputValue => {
-    this.setState({ inputValue })
+  handleTextChange = (text) => {
+    this.props.updateValue(text, this.props.refName)
   }
 
   render () {
@@ -19,8 +15,8 @@ class TaskEditField extends React.Component {
             style={styles.text}
             placeholder="What are you going to accomplish tomorrow?"
             placeholderTextColor="white"
-            value={this.state.inputValue}
-            onChange={this.handleTextChange}
+            value={this.props.value}
+            onChangeText={this.handleTextChange}
             returnKeyType='done' />
         </View>
       </View>
